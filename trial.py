@@ -40,7 +40,7 @@ m2 = 48
 n = int(random() * (m2-m1+1)) + m1
 h2.append(l[n])
 l.pop(n)
-print(h2)
+
 
 # creating flop
 print ("")
@@ -80,11 +80,7 @@ print(t)
 print("")
 
 # finaly output
-print("summary:")
-print(h1)
-print(h2)
-print(t)
-print("")
+
 
 # find combinations
 # creating yours sequence
@@ -94,10 +90,10 @@ print("")
 
 # creating opponent's sequence
 g2 = h2 + t
-print(g2)
+
 print("")
 
-# yours full combination
+# yours full combination (digits)
 gasAA=[0,0,0,0,0,0,0]
 
 for i in g1:    
@@ -183,8 +179,37 @@ for i in g1:
 
 print("")
 
+# yours full combination (suit)
 
-#opponent's full combination       
+gasSA=[0,0,0,0,0,0,0]
+
+for r in g1:
+        if r == "2h" or r == "3h" or r == "4h" or r == "5h" or r == "6h" or r == "7h" or r == "8h" or r == "9h" or r == "10h" or r == "Jh" or r == "Qh" or r == "Kh" or r == "Ah" :
+                
+                sh = g1.index(r)
+                gasSA.pop(sh)
+                gasSA.insert(sh, 1)
+for r in g1:
+        if r == "2d" or r == "3d" or r == "4d" or r == "5d" or r == "6d" or r == "7d" or r == "8d" or r == "9d" or r == "10d" or r == "Jd" or r == "Qd" or r == "Kd" or r == "Ad" :
+                
+                sd = g1.index(r)
+                gasSA.pop(sd)
+                gasSA.insert(sd, 2)
+for r in g1:
+        if r == "2c" or r == "3c" or r == "4c" or r == "5c" or r == "6c" or r == "7c" or r == "8c" or r == "9c" or r == "10c" or r == "Jc" or r == "Qc" or r == "Kc" or r == "Ac" :
+                
+                sc = g1.index(r)
+                gasSA.pop(sc)
+                gasSA.insert(sc, 3)
+for r in g1:
+        if r == "2s" or r == "3s" or r == "4s" or r == "5s" or r == "6s" or r == "7s" or r == "8s" or r == "9s" or r == "10s" or r == "Js" or r == "Qs" or r == "Ks" or r == "As" :
+                
+                ss = g1.index(r)
+                gasSA.pop(ss)
+                gasSA.insert(ss, 4)
+
+
+#opponent's full combination (digits)      
 
 gasBB=[0,0,0,0,0,0,0]
 
@@ -207,7 +232,7 @@ for j in g2:
         if j == "5h" or j == "5d" or j == "5c" or j == "5s":
             b5 = g2.index(j)
             gasBB.pop(b5)
-            gasBB.insert(b5, 2) 
+            gasBB.insert(b5, 5) 
 for j in g2:    
         if j == "6h" or j == "6d" or j == "6c" or j == "6s":
             b6 = g2.index(j)
@@ -252,6 +277,41 @@ for j in g2:
         if j == "Ah" or j == "Ad" or j == "Ac" or j == "As":
             b14 = g2.index(j)
             gasBB.pop(b14)
-            gasBB.insert(b14, 14) 
-            
-print("")
+            gasBB.insert(b14, 14)
+
+# opponent's full combination (suit)
+
+gasSB=[0,0,0,0,0,0,0]
+
+for t in g2:
+        if t == "2h" or t == "3h" or t == "4h" or t == "5h" or t == "6h" or t == "7h" or t == "8h" or t == "9h" or t == "10h" or t == "Jh" or t == "Qh" or t == "Kh" or t == "Ah" :
+                
+                bh = g2.index(t)
+                gasSB.pop(bh)
+                gasSB.insert(bh, 1)
+for t in g2:
+        if t == "2d" or t == "3d" or t == "4d" or t == "5d" or t == "6d" or t == "7d" or t == "8d" or t == "9d" or t == "10d" or t == "Jd" or t == "Qd" or t == "Kd" or t == "Ad" :
+                
+                bd = g2.index(t)
+                gasSB.pop(bd)
+                gasSB.insert(bd, 2)
+for t in g2:
+        if t == "2c" or t == "3c" or t == "4c" or t == "5c" or t == "6c" or t == "7c" or t == "8c" or t == "9c" or t == "10c" or t == "Jc" or t == "Qc" or t == "Kc" or t == "Ac" :
+                
+                bc = g2.index(t)
+                gasSB.pop(bc)
+                gasSB.insert(bc, 3)
+for t in g2:
+        if t == "2s" or t == "3s" or t == "4s" or t == "5s" or t == "6s" or t == "7s" or t == "8s" or t == "9s" or t == "10s" or t == "Js" or t == "Qs" or t == "Ks" or t == "As" :
+                
+                bs = g2.index(t)
+                gasSB.pop(bs)
+                gasSB.insert(bs, 4)
+
+           
+print(g2)            
+print(gasBB)
+print(gasSB)
+
+
+
