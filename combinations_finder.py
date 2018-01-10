@@ -7,7 +7,7 @@
 #c6 = input()
 #c7 = input()
 #h1 = [c1, c2, c3, c4, c5, c6, c7]
-h1 = ["As", "3s", "5s", "4s", "Qc", "2s", "Ks"]
+h1 = ["7h", "7s", "7d", "5c", "Qc", "2s", "Ks"]
 # finding royal-flush
 RF = 0
 RFd = [10, 11, 12, 13, 14]#first condition
@@ -29,6 +29,7 @@ if r1S >= 5:
     RF = 1
 #finding straight-flush
 #hearts
+SF = 0
 HS1 = ["2h", "3h", "4h", "5h", "6h"]
 rH = len(list(set(h1) & set(HS1)))
 if rH >= 5:
@@ -212,29 +213,123 @@ rS = len(list(set(h1) & set(SS9)))
 if rS >= 5:
     SF = 1
     sSF = 15
-# finding pairs, two pairs, triple, full house, quads
-#repeats = []
-#repeats.insert(2, hand1digits.count(2))
-#repeats.insert(3, hand1digits.count(3))
-#repeats.insert(4, hand1digits.count(4))
-#repeats.insert(5, hand1digits.count(5))
-#repeats.insert(6, hand1digits.count(6))
-#repeats.insert(7, hand1digits.count(7))
-#repeats.insert(8, hand1digits.count(8))
-#repeats.insert(9, hand1digits.count(9))
-#repeats.insert(10, hand1digits.count(10))
-#repeats.insert(11, hand1digits.count(11))
-#repeats.insert(12, hand1digits.count(12))
-#repeats.insert(13, hand1digits.count(13))
-#repeats.insert(14, hand1digits.count(14))
-#a = max(repeats)
-#b = repeats.index(max(repeats)) + 2
-#print(repeats)
-#for i in repeats:
-    #if i == 4:
-        #sQ = (repeats.index(i) + 2)*4
-        #print("quads")
-    #if i == 3:
-        #sT = (repeats.index(i) + 2)*3
-        #print("triple")
+#finding quads
+Q = 0
+Q2 = ["2h", "2d", "2c", "2s"]
+q2 = len(list(set(h1) & set(Q2)))
+if q2 >= 4:
+    Q = 1
+    sQ = 8
+Q3 = ["3h", "3d", "3c", "3s"]
+q3 = len(list(set(h1) & set(Q3)))
+if q3 >= 4:
+    Q = 1
+    sQ = 12
+Q4 = ["4h", "4d", "4c", "4s"]
+q4 = len(list(set(h1) & set(Q4)))
+if q4 >= 4:
+    Q = 1
+    sQ = 16
+Q5 = ["5h", "5d", "5c", "5s"]
+q5 = len(list(set(h1) & set(Q5)))
+if q5 >= 4:
+    Q = 1
+    sQ = 20
+Q6 = ["6h", "6d", "6c", "6s"]
+q6 = len(list(set(h1) & set(Q6)))
+if q6 >= 4:
+    Q = 1
+    sQ = 24
+Q7 = ["7h", "7d", "7c", "7s"]
+q7 = len(list(set(h1) & set(Q7)))
+if q7 >= 4:
+    Q = 1
+    sQ = 28
+Q8 = ["8h", "8d", "8c", "8s"]
+q8 = len(list(set(h1) & set(Q8)))
+if q8 >= 4:
+    Q = 1
+    sQ = 32
+Q9 = ["9h", "9d", "9c", "9s"]
+q9 = len(list(set(h1) & set(Q9)))
+if q9 >= 4:
+    Q = 1
+    sQ = 36
+Q10 = ["10h", "10d", "10c", "10s"]
+q10 = len(list(set(h1) & set(Q10)))
+if q10 >= 4:
+    Q = 1
+    sQ = 40
+Q11 = ["Jh", "Jd", "Jc", "Js"]
+q11 = len(list(set(h1) & set(Q11)))
+if q11 >= 4:
+    Q = 1
+    sQ = 44
+Q12 = ["Qh", "Qd", "Qc", "Qs"]
+q12 = len(list(set(h1) & set(Q12)))
+if q12 >= 4:
+    Q = 1
+    sQ = 48
+Q13 = ["Kh", "Kd", "Kc", "Ks"]
+q13 = len(list(set(h1) & set(Q13)))
+if q13 >= 4:
+    Q = 1
+    sQ = 52
+Q14= ["Ah", "Ad", "Ac", "As"]
+q14 = len(list(set(h1) & set(Q14)))
+if q14 >= 4:
+    Q = 1
+    sQ = 56
+#finding triple
+T = 0
+h1 = [7,4,3,2,6,6,14]
+repeats3 = []
+repeats3.insert(2, h1.count(2))
+repeats3.insert(3, h1.count(3))
+repeats3.insert(4, h1.count(4))
+repeats3.insert(5, h1.count(5))
+repeats3.insert(6, h1.count(6))
+repeats3.insert(7, h1.count(7))
+repeats3.insert(8, h1.count(8))
+repeats3.insert(9, h1.count(9))
+repeats3.insert(10, h1.count(10))
+repeats3.insert(11, h1.count(11))
+repeats3.insert(12, h1.count(12))
+repeats3.insert(13, h1.count(13))
+repeats3.insert(14, h1.count(14))
+a = max(repeats3)
+b = repeats3.index(max(repeats3)) + 2
+for i in repeats3:
+        if i == 3:
+            T = 1
+            sT = b * 3
+#finding two pairs
+P = 0
+TP = 0
+repeats22 = []
+repeats22.insert(2, h1.count(2))
+repeats22.insert(3, h1.count(3))
+repeats22.insert(4, h1.count(4))
+repeats22.insert(5, h1.count(5))
+repeats22.insert(6, h1.count(6))
+repeats22.insert(7, h1.count(7))
+repeats22.insert(8, h1.count(8))
+repeats22.insert(9, h1.count(9))
+repeats22.insert(10, h1.count(10))
+repeats22.insert(11, h1.count(11))
+repeats22.insert(12, h1.count(12))
+repeats22.insert(13, h1.count(13))
+repeats22.insert(14, h1.count(14))
+a22 = repeats22.count(2)
+if a22 == 2:
+    TP = 1
+    sTP = 0
+if a22 == 1:
+    P = 1
+    sP = (repeats22.index(2)+2) * 2
 
+#finding high card
+H = 0
+h = max(h1)
+#summary listing!
+summary = [RF, SF, Q, T, P, H]
