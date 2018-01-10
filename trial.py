@@ -32,15 +32,16 @@ print(h1)
 h2 = []
 m2 = 49
 n = int(random() * (m2-m1+1)) + m1
-print ("")
-print ("opponent's hand:")
+print("")
+print("opponent's hand:")
+
 h2.append(l[n])
 l.pop(n)
 m2 = 48
 n = int(random() * (m2-m1+1)) + m1
 h2.append(l[n])
 l.pop(n)
-
+print(h2)
 
 # creating flop
 print ("")
@@ -85,13 +86,12 @@ print("")
 # find combinations
 # creating yours sequence
 g1 = h1 + t
-print(g1)
 print("")
 
 # creating opponent's sequence
 g2 = h2 + t
 
-print("")
+
 
 # yours full combination (digits)
 gasAA=[0,0,0,0,0,0,0]
@@ -177,7 +177,7 @@ for i in g1:
 
 
 
-print("")
+
 
 # yours full combination (suit)
 
@@ -285,33 +285,48 @@ gasSB=[0,0,0,0,0,0,0]
 
 for t in g2:
         if t == "2h" or t == "3h" or t == "4h" or t == "5h" or t == "6h" or t == "7h" or t == "8h" or t == "9h" or t == "10h" or t == "Jh" or t == "Qh" or t == "Kh" or t == "Ah" :
-                
                 bh = g2.index(t)
                 gasSB.pop(bh)
                 gasSB.insert(bh, 1)
 for t in g2:
         if t == "2d" or t == "3d" or t == "4d" or t == "5d" or t == "6d" or t == "7d" or t == "8d" or t == "9d" or t == "10d" or t == "Jd" or t == "Qd" or t == "Kd" or t == "Ad" :
-                
                 bd = g2.index(t)
                 gasSB.pop(bd)
                 gasSB.insert(bd, 2)
 for t in g2:
         if t == "2c" or t == "3c" or t == "4c" or t == "5c" or t == "6c" or t == "7c" or t == "8c" or t == "9c" or t == "10c" or t == "Jc" or t == "Qc" or t == "Kc" or t == "Ac" :
-                
                 bc = g2.index(t)
                 gasSB.pop(bc)
                 gasSB.insert(bc, 3)
 for t in g2:
         if t == "2s" or t == "3s" or t == "4s" or t == "5s" or t == "6s" or t == "7s" or t == "8s" or t == "9s" or t == "10s" or t == "Js" or t == "Qs" or t == "Ks" or t == "As" :
-                
                 bs = g2.index(t)
                 gasSB.pop(bs)
                 gasSB.insert(bs, 4)
-
-           
-print(g2)            
+print("hand1 full combination: ")           
+print(g1)
+print(gasAA)
+print(gasSA)
+print("")
+print("hand2 full combination: ")  
+print(g2)
 print(gasBB)
 print(gasSB)
-
+gasAA=[2,2,3,3,3,5,7]
+pairs = []
+for i in gasAA:
+	j = gasAA.count(i)
+	pairs.append(j)
+count2 = pairs.count(2)
+if count2 == 2:
+        print("pair")
+if count2 == 4:
+        print("two pair")        
+count3 = pairs.count(3)
+if count3 == 3:
+        print("triple")
+count4 = pairs.count(4)
+if count4 == 4:
+        print("kare")
 
 
