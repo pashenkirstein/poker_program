@@ -312,21 +312,62 @@ print("hand2 full combination: ")
 print(g2)
 print(gasBB)
 print(gasSB)
-gasAA=[2,2,3,3,3,5,7]
+print("")
+# HAND1 finding pair, two pair, triple, quads
 pairs = []
+c2 = 0
+c22 = 0
+c3 = 0
+c4 = 0
 for i in gasAA:
 	j = gasAA.count(i)
 	pairs.append(j)
 count2 = pairs.count(2)
 if count2 == 2:
-        print("pair")
+        c2 = 1
 if count2 == 4:
-        print("two pair")        
+        c22 = 1        
 count3 = pairs.count(3)
 if count3 == 3:
-        print("triple")
+        c3 = 1
 count4 = pairs.count(4)
 if count4 == 4:
-        print("kare")
+        c4 = 1
+if c4 == 1:
+        print("hand1 has: quads")
+if c3 == 1:
+        print("hand1 has: triple")
+if c22 == 1:
+        print("hand1 has: two pairs")
+if c2 == 1:
+        print("hand1 has: pair")
 
+# HAND2 finding pair, two pair, triple, quads
+pairs2 = []
+z2 = 0
+z22 = 0
+z3 = 0
+z4 = 0
+for i in gasBB:
+	j = gasBB.count(i)
+	pairs2.append(j)
+count22 = pairs2.count(2)
+if count22 == 2:
+        z2 = 1
+if count22 == 4:
+        z22 = 1        
+count23 = pairs2.count(3)
+if count23 == 3:
+        z3 = 1
+count24 = pairs.count(4)
+if count24 == 4:
+        z4 = 1
+if z4 == 1:
+        print("hand2 has: quads")
+if z3 == 1:
+        print("hand2 has: triple")
+if z22 == 1:
+        print("hand2 has: two pairs")
+if z2 == 1:
+        print("hand2 has: pair")
 
