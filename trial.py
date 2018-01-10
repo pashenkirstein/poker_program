@@ -313,61 +313,40 @@ print(g2)
 print(gasBB)
 print(gasSB)
 print("")
-# HAND1 finding pair, two pair, triple, quads
-pairs = []
-c2 = 0
-c22 = 0
-c3 = 0
-c4 = 0
-for i in gasAA:
-	j = gasAA.count(i)
-	pairs.append(j)
-count2 = pairs.count(2)
-if count2 == 2:
-        c2 = 1
-if count2 == 4:
-        c22 = 1        
-count3 = pairs.count(3)
-if count3 == 3:
-        c3 = 1
-count4 = pairs.count(4)
-if count4 == 4:
-        c4 = 1
-if c4 == 1:
-        print("hand1 has: quads")
-if c3 == 1:
-        print("hand1 has: triple")
-if c22 == 1:
-        print("hand1 has: two pairs")
-if c2 == 1:
-        print("hand1 has: pair")
 
-# HAND2 finding pair, two pair, triple, quads
-pairs2 = []
-z2 = 0
-z22 = 0
-z3 = 0
-z4 = 0
-for i in gasBB:
-	j = gasBB.count(i)
-	pairs2.append(j)
-count22 = pairs2.count(2)
-if count22 == 2:
-        z2 = 1
-if count22 == 4:
-        z22 = 1        
-count23 = pairs2.count(3)
-if count23 == 3:
-        z3 = 1
-count24 = pairs.count(4)
-if count24 == 4:
-        z4 = 1
-if z4 == 1:
-        print("hand2 has: quads")
-if z3 == 1:
-        print("hand2 has: triple")
-if z22 == 1:
-        print("hand2 has: two pairs")
-if z2 == 1:
-        print("hand2 has: pair")
+# finding royal flush HAND1
+RF1 = 0
+i9 = ["5d", "4h", "10h", "Jh", "Qh", "Kh", "As"]
 
+HRF = ["10h", "Jh", "Qh", "Kh", "Ah"]
+DRF = ["10d", "Jd", "Qd", "Kd", "Ad"]
+CRF = ["10c", "Jc", "Qc", "Kc", "Ac"]
+SRF = ["10s", "Js", "Qs", "Ks", "As"]
+r1H = len(list(set(g1) & set(HRF)))
+if r1H >= 5:
+    RF1 = 1
+r1D = len(list(set(g1) & set(DRF)))
+if r1D >= 5:
+    RF1 = 1
+r1C = len(list(set(g1) & set(CRF)))
+if r1C >= 5:
+    RF1 = 1
+r1S = len(list(set(g1) & set(SRF)))
+if r1S >= 5:
+    RF1 = 1
+
+# finding royal flush HAND2
+RF2 = 0
+i9 = ["5d", "4h", "10h", "Jh", "Qh", "Kh", "As"]
+r2H = len(list(set(g2) & set(HRF)))
+if r1H >= 5:
+    RF2 = 1
+r2D = len(list(set(g2) & set(DRF)))
+if r2D >= 5:
+    RF2 = 1
+r2C = len(list(set(g2) & set(CRF)))
+if r2C >= 5:
+    RF2 = 1
+r2S = len(list(set(g2) & set(SRF)))
+if r2S >= 5:
+    RF2 = 1
